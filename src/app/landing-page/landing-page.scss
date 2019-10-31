@@ -1,0 +1,23 @@
+.lost-something-container {
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+}
+
+.lost-something-container>* {
+  width: 100%;
+}
+
+.mt30 {
+  margin-top: 30px;
+}
+
+.margin-auto {
+  margin: auto;
+}
+
+.right {
+  float: right;
+}
+
+

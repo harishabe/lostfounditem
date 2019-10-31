@@ -1,0 +1,59 @@
+<!--<div class="container">
+  <mat-button-toggle-group class="right" appearance="legacy" name="fontStyle" aria-label="Font Style">
+    <mat-button-toggle value="bold">Lost</mat-button-toggle>
+    <mat-button-toggle value="bold">Found</mat-button-toggle>
+  </mat-button-toggle-group>
+  <div class="col-md-8 margin-auto">
+    <mat-card class="mt30">
+      <mat-card-content>
+        <div class="lost-something-container">
+          <mat-form-field>
+            <mat-select placeholder="City">
+              <mat-option value="option">Oslo</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput [matDatepicker]="picker1" placeholder="Date">
+            <mat-datepicker-toggle matSuffix></mat-datepicker-toggle>
+            <mat-datepicker #picker1></mat-datepicker>
+          </mat-form-field>
+          <mat-form-field>
+            <mat-select placeholder="Category">
+              <mat-option value="option">Mobile</mat-option>
+            </mat-select>
+          </mat-form-field>
+          <button mat-raised-button color="primary">Search</button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>-->
+
+<!--<mat-form-field>
+    <mat-select placeholder="{{label}}">
+      <mat-option value="option">{{data}}</mat-option>
+    </mat-select>
+  </mat-form-field> -->
+
+<div class="container">
+  <div class="row">
+    <div class="spinner_overlay" *ngIf="showSpinner">
+      <mat-spinner strokeWidth="5" [diameter]="50" class="spinner" *ngIf="showSpinner"></mat-spinner>
+    </div>
+    <div class="col-md-4 mt30" *ngFor="let res of foundSomething">
+      <mat-card>
+        <mat-card-title>
+          <h6 style="text-transform: uppercase;">{{res}}</h6>
+        </mat-card-title>
+        <mat-card-content>
+          <p>Date Lost : {{res.date_lost}}</p>
+          <p>Model : {{res.model}}</p>
+          <p>Color : {{res.color}}</p>
+          <p>Place Lost : {{res.place_lost}}</p>
+          <p>Category: {{res.cat.cat}}</p>
+          <p>Subcategory: {{res.subcat.subcat}}</p>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>

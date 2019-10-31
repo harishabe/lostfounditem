@@ -1,0 +1,63 @@
+<mat-sidenav-container id="nav-bar" class="sidenav-container">
+
+  <!-- BELOW CODE SIDE BAR WITH MENU -->
+  <mat-sidenav #drawer class="sidenav sidebar-box-shadow" fixedInViewport="true"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="!(isHandset$ | async)">
+    <mat-toolbar class="sidenav-header">
+    </mat-toolbar>
+    <mat-divider></mat-divider>
+    <mat-nav-list class="sidebar-list">
+      <a mat-list-item matTooltip="Dashboard" routerLink="/dashboard/addProduct">
+        <mat-icon class="material-icons">cloud_upload</mat-icon>
+      </a>
+
+      <a mat-list-item matTooltip="Dashboard" routerLink="/dashboard/profile">
+        <mat-icon class="material-icons">person_outline</mat-icon>
+      </a>
+
+      <a (click)="logout()" mat-list-item matTooltip="Static schema plot">
+        <mat-icon class="material-icons">exit_to_app</mat-icon>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <!-- END SIDEBAR MENU -->
+
+  <mat-sidenav-content>
+    <mat-toolbar class="navbar-header" color="primary">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+        <mat-icon aria-label="Side nav toggle icon">
+          <mat-icon class="material-icons">
+            menu
+          </mat-icon>
+        </mat-icon>
+      </button>
+
+      <div class="space"></div>
+
+      <!-- BELOW CODE FOR LOGOUT -->
+      <button mat-button matTooltip="User profile" [matMenuTriggerFor]="logOut">
+        <mat-icon class="mat-icon material-icons">person_outline</mat-icon>
+      </button>
+      <mat-menu #logOut="matMenu">
+        <button mat-menu-item style="width: 200px;">
+          <mat-icon class="mat-icon material-icons">settings</mat-icon>
+          <span>Settings</span>
+        </button>
+        <button mat-menu-item style="width: 200px;">
+          <mat-icon class="mat-icon material-icons">account_box</mat-icon>
+          <span>Profile</span>
+        </button>
+        <mat-divider></mat-divider>
+        <button routerLink="/" mat-menu-item style="width: 200px;">
+          <mat-icon class="mat-icon material-icons">exit_to_app</mat-icon>
+          <span>LOGOUT</span>
+        </button>
+      </mat-menu>
+      <!-- END LOGOUT -->
+
+    </mat-toolbar>
+    <!-- Add Content Here -->
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

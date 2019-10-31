@@ -1,0 +1,22 @@
+<div class="col-md-6 margin-auto">
+  <div class="spinner_overlay" *ngIf="showSpinner">
+    <mat-spinner strokeWidth="5" [diameter]="50" class="spinner"></mat-spinner>
+  </div>
+  <mat-card class="mt30">
+    <mat-card-content>
+      <form [formGroup]="signInForm" autocomplete="off" novalidate (ngSubmit)="createSignIn(signInForm.value)">
+        <div class="lost-something-container">
+          <mat-form-field>
+            <input matInput type="text" placeholder="User Name" formControlName="username">
+            <mat-error *ngIf="hasError('username', 'required')">Username required</mat-error>
+          </mat-form-field>
+          <mat-form-field>
+            <input matInput type="password" placeholder="Password" formControlName="password">
+            <mat-error *ngIf="hasError('password', 'required')">Password required</mat-error>
+          </mat-form-field>
+          <button mat-raised-button color="primary" [disabled]="!signInForm.valid">SignIn</button>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
