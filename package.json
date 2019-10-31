@@ -11,8 +11,8 @@
     "preinstall": "npm install -g @angular/cli @angular/compiler-cli typescript"
   },
   "engines": {
-    "node": "8.11.3",
-    "npm": "6.1.0"
+    "node": "*",
+    "npm": "*"
   },
   "private": true,
   "dependencies": {
