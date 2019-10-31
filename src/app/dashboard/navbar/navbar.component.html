@@ -1,9 +1,7 @@
 <mat-sidenav-container id="nav-bar" class="sidenav-container">
 
   <!-- BELOW CODE SIDE BAR WITH MENU -->
-  <mat-sidenav #drawer class="sidenav sidebar-box-shadow" fixedInViewport="true"
-    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'" [mode]="(isHandset$ | async) ? 'over' : 'side'"
-    [opened]="!(isHandset$ | async)">
+  <mat-sidenav #drawer class="sidenav sidebar-box-shadow" fixedInViewport="true">
     <mat-toolbar class="sidenav-header">
     </mat-toolbar>
     <mat-divider></mat-divider>
